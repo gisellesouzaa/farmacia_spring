@@ -52,9 +52,9 @@ public class ProdutoController {
 	}
 	
 //	@GetMapping("/nome/{nome}/oulaboratorio/{laboratorio}")
-//	public ResponseEntity<List<Produto>> getByNomeOuFornecedor(@PathVariable String nome, String laboratorio){
+//	public ResponseEntity<List<Produto>> getByNomeOuLaboratorio(@PathVariable String nome, String laboratorio){
 //		
-//		return ResponseEntity.ok(produtoRepository.findByNomeOrFornecedor(nome, laboratorio));	
+//		return ResponseEntity.ok(produtoRepository.findByNomeOrLaboratorio(nome, laboratorio));	
 //	}
 //	
 //	@GetMapping("/nome/{nome}/elaboratorio/{fornecedor}")
@@ -62,13 +62,13 @@ public class ProdutoController {
 //		
 //		return ResponseEntity.ok(produtoRepository.findByNomeOrLaboratorio(nome, laboratorio));	
 //	}
-//	
+	
 //	@GetMapping("/preco_inicial/{inicio}/preco_final/{fim}")
 //	public ResponseEntity<List<Produto>> getByPrecoBetween(@PathVariable BigDecimal inicio, BigDecimal fim){
 //		
 //		return ResponseEntity.ok(produtoRepository.findByPrecoBetween(inicio, fim));	
 //	}
-	
+//	
 	@PostMapping
 	public ResponseEntity<Produto> post(@Valid @RequestBody Produto produto){
 

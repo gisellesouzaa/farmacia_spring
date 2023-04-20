@@ -2,10 +2,13 @@ package com.generation.farmacia.model;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -39,6 +42,12 @@ public class Produto {
 	private BigDecimal preco;
 	
 	private String foto;
+	
+	// RELACIONAMENTO COM A CLASSE CATEGORIA
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Categoria categoria;
+
 	
 	//Get e Set
 	public Long getId() {
@@ -96,5 +105,15 @@ public class Produto {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	
+	
 	
 }
